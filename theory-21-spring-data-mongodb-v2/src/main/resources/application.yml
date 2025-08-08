@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      url: mongodb://localhost:27017/customer_db
+      uri: mongodb://localhost:27017/customer-db
   # cache:
   #   type: caffeine
   #   caffeine:
