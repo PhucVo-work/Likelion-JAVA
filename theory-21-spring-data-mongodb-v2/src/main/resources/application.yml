@@ -1,0 +1,21 @@
+spring:
+  data:
+    mongodb:
+      url: mongodb://localhost:27017/customer_db
+  # cache:
+  #   type: caffeine
+  #   caffeine:
+  #     spec: maximumSize=500,expireAfterWrite=10m
+
+  # Log mongodb query
+logging:
+  level:
+    # Log queries built by Spring Data MongoTemplate
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+
+    # Log raw MongoDB driver commands
+    org.mongodb.driver.protocol.command: DEBUG
+    org.mongodb.driver.protocol.query: DEBUG
+    org.mongodb.driver.protocol.update: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
