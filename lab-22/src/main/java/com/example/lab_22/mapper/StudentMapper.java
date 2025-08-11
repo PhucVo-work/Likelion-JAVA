@@ -3,6 +3,7 @@ package com.example.lab_22.mapper;
 import java.util.List;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
 import com.example.lab_22.dto.StudentDto;
@@ -15,6 +16,7 @@ public interface StudentMapper {
     Student toEntity(StudentDto studentDto);
 
     List<StudentDto> toDtoList(List<Student> students);
-
+    
+    @Mapping(target = "id", ignore = true)
     void updateEntityFromDto(StudentDto Dto, @MappingTarget Student entity);
 }
